@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bulidEX - Build & Execute Faster</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * {
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .dark .glass-effect {
+            background: rgba(30, 30, 30, 0.7);
+            backdrop-filter: blur(10px);
+        }
+        
+        .light .glass-effect {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="light transition-colors duration-300">
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 glass-effect border-b border-gray-200 dark:border-gray-700">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold gradient-text">bulidEX</div>
+                
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition">Home</a>
+                    <a href="#price" class="text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition">Price</a>
+                    <a href="#faq" class="text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition">FAQ</a>
+                    <a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition">Contact</a>
+                    
+                    <button onclick="toggleTheme()" class="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition">
+                        <span id="theme-icon">🌙</span>
+                    </button>
+                </div>
+                
+                <button onclick="toggleMenu()" class="md:hidden text-gray-700 dark:text-gray-300">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-2">
+                <a href="#home" class="block text-gray-700 dark:text-gray-300 hover:text-purple-600 py-2">Home</a>
+                <a href="#price" class="block text-gray-700 dark:text-gray-300 hover:text-purple-600 py-2">Price</a>
+                <a href="#faq" class="block text-gray-700 dark:text-gray-300 hover:text-purple-600 py-2">FAQ</a>
+                <a href="#contact" class="block text-gray-700 dark:text-gray-300 hover:text-purple-600 py-2">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 bg-white dark:bg-gray-900 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center fade-in">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 text-gray-900 dark:text-white">
+                    Build & Execute <span class="gradient-text">Faster</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-12 max-w-3xl mx-auto">
+                    The ultimate SaaS platform to accelerate your development workflow and bring your ideas to life in record time.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-lg font-semibold hover:shadow-2xl transform hover:scale-105 transition duration-300">
+                        Get Started Free
+                    </button>
+                    <button class="px-8 py-4 border-2 border-purple-600 text-purple-600 dark:text-purple-400 rounded-lg font-semibold hover:bg-purple-50 dark:hover:bg-gray-800 transition duration-300">
+                        Watch Demo
+                    </button>
+                </div>
+            </div>
+            
+            <div class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 rounded-2xl bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-gray-800 dark:to-gray-700 card-hover">
+                    <div class="text-4xl mb-4">⚡</div>
+                    <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">Lightning Fast</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Deploy your projects in seconds with our optimized infrastructure</p>
+                </div>
+                
+                <div class="p-8 rounded-2xl bg-gradient-to-br from-pink-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 card-hover">
+                    <div class="text-4xl mb-4">🔒</div>
+                    <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">Secure by Default</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Enterprise-grade security built into every layer</p>
+                </div>
+                
+                <div class="p-8 rounded-2xl bg-gradient-to-br from-indigo-50 to-blue-50 dark:from-gray-800 dark:to-gray-700 card-hover">
+                    <div class="text-4xl mb-4">📊</div>
+                    <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">Real-time Analytics</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Monitor performance with powerful insights dashboard</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="price" class="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">Simple, Transparent Pricing</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400">Choose the plan that fits your needs</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 card-hover border border-gray-200 dark:border-gray-700">
+                    <h3 class="text-2xl font-bold mb-2 text-gray-900 dark:text-white">Starter</h3>
+                    <div class="text-4xl font-bold mb-4 text-gray-900 dark:text-white">$0<span class="text-lg text-gray-600 dark:text-gray-400">/month</span></div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center text-gray-600 dark:text-gray-400">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            5 Projects
+                        </li>
+                        <li class="flex items-center text-gray-600 dark:text-gray-400">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Basic Analytics
+                        </li>
+                        <li class="flex items-center text-gray-600 dark:text-gray-400">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Community Support
+                        </li>
+                    </ul>
+                    <button class="w-full py-3 border-2 border-purple-600 text-purple-600 dark:text-purple-400 rounded-lg font-semibold hover:bg-purple-50 dark:hover:bg-gray-800 transition">
+                        Get Started
+                    </button>
+                </div>
+                
+                <div class="bg-gradient-to-br from-purple-600 to-indigo-600 rounded-2xl p-8 card-hover transform scale-105 shadow-2xl">
+                    <div class="bg-yellow-400 text-purple-900 text-xs font-bold px-3 py-1 rounded-full inline-block mb-4">POPULAR</div>
+                    <h3 class="text-2xl font-bold mb-2 text-white">Pro</h3>
+                    <div class="text-4xl font-bold mb-4 text-white">$49<span class="text-lg text-purple-200">/month</span></div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center text-white">
+                            <svg class="w-5 h-5 mr-2 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Unlimited Projects
+                        </li>
+                        <li class="flex items-center text-white">
+                            <svg class="w-5 h-5 mr-2 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Advanced Analytics
+                        </li>
+                        <li class="flex items-center text-white">
+                            <svg class="w-5 h-5 mr-2 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Priority Support
+                        </li>
+                        <li class="flex items-center text-white">
+                            <svg class="w-5 h-5 mr-2 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Custom Domain
+                        </li>
+                    </ul>
+                    <button class="w-full py-3 bg-white text-purple-600 rounded-lg font-semibold hover:bg-gray-100 transition">
+                        Get Started
+                    </button>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 card-hover border border-gray-200 dark:border-gray-700">
+                    <h3 class="text-2xl font-bold mb-2 text-gray-900 dark:text-white">Enterprise</h3>
+                    <div class="text-4xl font-bold mb-4 text-gray-900 dark:text-white">$199<span class="text-lg text-gray-600 dark:text-gray-400">/month</span></div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center text-gray-600 dark:text-gray-400">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Everything in Pro
+                        </li>
+                        <li class="flex items-center text-gray-600 dark:text-gray-400">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Dedicated Support
+                        </li>
+                        <li class="flex items-center text-gray-600 dark:text-gray-400">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            Custom Integrations
+                        </li>
+                        <li class="flex items-center text-gray-600 dark:text-gray-400">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            SLA Guarantee
+                        </li>
+                    </ul>
+                    <button class="w-full py-3 border-2 border-purple-600 text-purple-600 dark:text-purple-400 rounded-lg font-semibold hover:bg-purple-50 dark:hover:bg-gray-800 transition">
+                        Contact Sales
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">Frequently Asked Questions</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400">Everything you need to know about bulidEX</p>
+            </div>
+            
+            <div class="space-y-4">
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden">
+                    <button onclick="toggleFaq(1)" class="w-full p-6 text-left flex justify-between items-center hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                        <span class="font-semibold text-gray-900 dark:text-white">What is bulidEX?</span>
+                        <svg class="w-5 h-5 transform transition-transform" id="icon-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="faq-1" class="hidden px-6 pb-6 text-gray-600 dark:text-gray-400">
+                        bulidEX is a modern SaaS platform designed to accelerate your development workflow. We provide tools and infrastructure to help you build, deploy, and scale your applications faster than ever before.
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden">
+                    <button onclick="toggleFaq(2)" class="w-full p-6 text-left flex justify-between items-center hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                        <span class="font-semibold text-gray-900 dark:text-white">How does the free trial work?</span>
+                        <svg class="w-5 h-5 transform transition-transform" id="icon-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="faq-2" class="hidden px-6 pb-6 text-gray-600 dark:text-gray-400">
+                        Our free Starter plan is available forever with no credit card required. You get access to core features and can upgrade anytime as your needs grow.
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden">
+                    <button onclick="toggleFaq(3)" class="w-full p-6 text-left flex justify-between items-center hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                        <span class="font-semibold text-gray-900 dark:text-white">Can I change plans later?</span>
+                        <svg class="w-5 h-5 transform transition-transform" id="icon-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="faq-3" class="hidden px-6 pb-6 text-gray-600 dark:text-gray-400">
+                        Absolutely! You can upgrade or downgrade your plan at any time. Changes take effect immediately and we'll prorate the charges accordingly.
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden">
+                    <button onclick="toggleFaq(4)" class="w-full p-6 text-left flex justify-between items-center hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                        <span class="font-semibold text-gray-900 dark:text-white">What kind of support do you offer?</span>
+                        <svg class="w-5 h-5 transform transition-transform" id="icon-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="faq-4" class="hidden px-6 pb-6 text-gray-600 dark:text-gray-400">
+                        We offer community support for free users, priority email support for Pro users, and dedicated support with SLA guarantees for Enterprise customers.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gradient-to-br from-purple-600 to-indigo-600">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-white">Get in Touch</h2>
+                <p class="text-xl text-purple-100">Have questions? We'd love to hear from you.</p>
+            </div>
+            
+            <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-2xl">
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold mb-2 text-gray-900 dark:text-white">Name</label>
+                            <input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition" placeholder="John Doe">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-2 text-gray-900 dark:text-white">Email</label>
+                            <input type="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition" placeholder="john@example.com">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-semibold mb-2 text-gray-900 dark:text-white">Subject</label>
+                        <input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition" placeholder="How can we help?">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-semibold mb-2 text-gray-900 dark:text-white">Message</label>
+                        <textarea rows="5" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition" placeholder="Tell us more about your inquiry..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="w-full py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-lg font-semibold hover:shadow-xl transform hover:scale-105 transition duration-300">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="text-2xl font-bold gradient-text mb-4">bulidEX</div>
+                    <p class="text-gray-400">Build & Execute Faster with the modern SaaS platform.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Product</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">Features</a></li>
+                        <li><a href="#" class="hover:text-white transition">Pricing</a></li>
+                        <li><a href="#" class="hover:text-white transition">Security</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">About</a></li>
+                        <li><a href="#" class="hover:text-white transition">Blog</a></li>
+                        <li><a href="#" class="hover:text-white transition">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">Privacy</a></li>
+                        <li><a href="#" class="hover:text-white transition">Terms</a></li>
+                        <li><a href="#" class="hover:text-white transition">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 bulidEX. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const icon = document.getElementByI

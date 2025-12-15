@@ -35,35 +35,40 @@
         }
         
         .dark .glass-effect {
-            background: rgba(30, 30, 30, 0.7);
+            background: rgba(17, 24, 39, 0.8);
             backdrop-filter: blur(10px);
         }
         
         .light .glass-effect {
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(10px);
+        }
+        
+        .dark {
+            background-color: #111827;
+            color: #f3f4f6;
         }
     </style>
 </head>
 <body class="light transition-colors duration-300">
     <!-- Navigation -->
-    <nav class="fixed w-full top-0 z-50 glass-effect border-b border-gray-200 dark:border-gray-700">
+    <nav class="fixed w-full top-0 z-50 glass-effect border-b dark:border-gray-700 border-gray-200">
         <div class="max-w-7xl mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
                 <div class="text-2xl font-bold gradient-text">bulidEX</div>
                 
                 <div class="hidden md:flex space-x-8 items-center">
-                    <a href="#home" class="text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition">Home</a>
-                    <a href="#price" class="text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition">Price</a>
-                    <a href="#faq" class="text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition">FAQ</a>
-                    <a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition">Contact</a>
+                    <a href="#home" class="dark:text-gray-300 text-gray-700 hover:text-purple-600 dark:hover:text-purple-400 transition">Home</a>
+                    <a href="#price" class="dark:text-gray-300 text-gray-700 hover:text-purple-600 dark:hover:text-purple-400 transition">Price</a>
+                    <a href="#faq" class="dark:text-gray-300 text-gray-700 hover:text-purple-600 dark:hover:text-purple-400 transition">FAQ</a>
+                    <a href="#contact" class="dark:text-gray-300 text-gray-700 hover:text-purple-600 dark:hover:text-purple-400 transition">Contact</a>
                     
-                    <button onclick="toggleTheme()" class="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition">
+                    <button onclick="toggleTheme()" class="p-2 rounded-lg dark:bg-gray-700 bg-gray-200 dark:hover:bg-gray-600 hover:bg-gray-300 transition">
                         <span id="theme-icon">🌙</span>
                     </button>
                 </div>
                 
-                <button onclick="toggleMenu()" class="md:hidden text-gray-700 dark:text-gray-300">
+                <button onclick="toggleMenu()" class="md:hidden dark:text-gray-300 text-gray-700">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
@@ -72,89 +77,89 @@
             
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-2">
-                <a href="#home" class="block text-gray-700 dark:text-gray-300 hover:text-purple-600 py-2">Home</a>
-                <a href="#price" class="block text-gray-700 dark:text-gray-300 hover:text-purple-600 py-2">Price</a>
-                <a href="#faq" class="block text-gray-700 dark:text-gray-300 hover:text-purple-600 py-2">FAQ</a>
-                <a href="#contact" class="block text-gray-700 dark:text-gray-300 hover:text-purple-600 py-2">Contact</a>
+                <a href="#home" class="block dark:text-gray-300 text-gray-700 hover:text-purple-600 py-2">Home</a>
+                <a href="#price" class="block dark:text-gray-300 text-gray-700 hover:text-purple-600 py-2">Price</a>
+                <a href="#faq" class="block dark:text-gray-300 text-gray-700 hover:text-purple-600 py-2">FAQ</a>
+                <a href="#contact" class="block dark:text-gray-300 text-gray-700 hover:text-purple-600 py-2">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="pt-32 pb-20 bg-white dark:bg-gray-900 transition-colors duration-300">
+    <section id="home" class="pt-32 pb-20 dark:bg-gray-900 bg-white transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center fade-in">
-                <h1 class="text-5xl md:text-7xl font-bold mb-6 text-gray-900 dark:text-white">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 dark:text-white text-gray-900">
                     Build & Execute <span class="gradient-text">Faster</span>
                 </h1>
-                <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-12 max-w-3xl mx-auto">
+                <p class="text-xl md:text-2xl dark:text-gray-400 text-gray-600 mb-12 max-w-3xl mx-auto">
                     The ultimate SaaS platform to accelerate your development workflow and bring your ideas to life in record time.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
                     <button class="px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-lg font-semibold hover:shadow-2xl transform hover:scale-105 transition duration-300">
                         Get Started Free
                     </button>
-                    <button class="px-8 py-4 border-2 border-purple-600 text-purple-600 dark:text-purple-400 rounded-lg font-semibold hover:bg-purple-50 dark:hover:bg-gray-800 transition duration-300">
+                    <button class="px-8 py-4 border-2 border-purple-600 dark:text-purple-400 text-purple-600 rounded-lg font-semibold dark:hover:bg-gray-800 hover:bg-purple-50 transition duration-300">
                         Watch Demo
                     </button>
                 </div>
             </div>
             
             <div class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="p-8 rounded-2xl bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-gray-800 dark:to-gray-700 card-hover">
+                <div class="p-8 rounded-2xl dark:from-gray-800 dark:to-gray-700 bg-gradient-to-br from-purple-50 to-indigo-50 card-hover">
                     <div class="text-4xl mb-4">⚡</div>
-                    <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">Lightning Fast</h3>
-                    <p class="text-gray-600 dark:text-gray-400">Deploy your projects in seconds with our optimized infrastructure</p>
+                    <h3 class="text-xl font-bold mb-2 dark:text-white text-gray-900">Lightning Fast</h3>
+                    <p class="dark:text-gray-400 text-gray-600">Deploy your projects in seconds with our optimized infrastructure</p>
                 </div>
                 
-                <div class="p-8 rounded-2xl bg-gradient-to-br from-pink-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 card-hover">
+                <div class="p-8 rounded-2xl dark:from-gray-800 dark:to-gray-700 bg-gradient-to-br from-pink-50 to-purple-50 card-hover">
                     <div class="text-4xl mb-4">🔒</div>
-                    <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">Secure by Default</h3>
-                    <p class="text-gray-600 dark:text-gray-400">Enterprise-grade security built into every layer</p>
+                    <h3 class="text-xl font-bold mb-2 dark:text-white text-gray-900">Secure by Default</h3>
+                    <p class="dark:text-gray-400 text-gray-600">Enterprise-grade security built into every layer</p>
                 </div>
                 
-                <div class="p-8 rounded-2xl bg-gradient-to-br from-indigo-50 to-blue-50 dark:from-gray-800 dark:to-gray-700 card-hover">
+                <div class="p-8 rounded-2xl dark:from-gray-800 dark:to-gray-700 bg-gradient-to-br from-indigo-50 to-blue-50 card-hover">
                     <div class="text-4xl mb-4">📊</div>
-                    <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">Real-time Analytics</h3>
-                    <p class="text-gray-600 dark:text-gray-400">Monitor performance with powerful insights dashboard</p>
+                    <h3 class="text-xl font-bold mb-2 dark:text-white text-gray-900">Real-time Analytics</h3>
+                    <p class="dark:text-gray-400 text-gray-600">Monitor performance with powerful insights dashboard</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Pricing Section -->
-    <section id="price" class="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
+    <section id="price" class="py-20 dark:bg-gray-800 bg-gray-50 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">Simple, Transparent Pricing</h2>
-                <p class="text-xl text-gray-600 dark:text-gray-400">Choose the plan that fits your needs</p>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 dark:text-white text-gray-900">Simple, Transparent Pricing</h2>
+                <p class="text-xl dark:text-gray-400 text-gray-600">Choose the plan that fits your needs</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 card-hover border border-gray-200 dark:border-gray-700">
-                    <h3 class="text-2xl font-bold mb-2 text-gray-900 dark:text-white">Starter</h3>
-                    <div class="text-4xl font-bold mb-4 text-gray-900 dark:text-white">$0<span class="text-lg text-gray-600 dark:text-gray-400">/month</span></div>
+                <div class="dark:bg-gray-900 bg-white rounded-2xl p-8 card-hover dark:border-gray-700 border border-gray-200">
+                    <h3 class="text-2xl font-bold mb-2 dark:text-white text-gray-900">Starter</h3>
+                    <div class="text-4xl font-bold mb-4 dark:text-white text-gray-900">$0<span class="text-lg dark:text-gray-400 text-gray-600">/month</span></div>
                     <ul class="space-y-3 mb-8">
-                        <li class="flex items-center text-gray-600 dark:text-gray-400">
+                        <li class="flex items-center dark:text-gray-400 text-gray-600">
                             <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                             </svg>
                             5 Projects
                         </li>
-                        <li class="flex items-center text-gray-600 dark:text-gray-400">
+                        <li class="flex items-center dark:text-gray-400 text-gray-600">
                             <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                             </svg>
                             Basic Analytics
                         </li>
-                        <li class="flex items-center text-gray-600 dark:text-gray-400">
+                        <li class="flex items-center dark:text-gray-400 text-gray-600">
                             <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                             </svg>
                             Community Support
                         </li>
                     </ul>
-                    <button class="w-full py-3 border-2 border-purple-600 text-purple-600 dark:text-purple-400 rounded-lg font-semibold hover:bg-purple-50 dark:hover:bg-gray-800 transition">
+                    <button class="w-full py-3 border-2 border-purple-600 dark:text-purple-400 text-purple-600 rounded-lg font-semibold dark:hover:bg-gray-800 hover:bg-purple-50 transition">
                         Get Started
                     </button>
                 </div>
@@ -194,36 +199,36 @@
                     </button>
                 </div>
                 
-                <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 card-hover border border-gray-200 dark:border-gray-700">
-                    <h3 class="text-2xl font-bold mb-2 text-gray-900 dark:text-white">Enterprise</h3>
-                    <div class="text-4xl font-bold mb-4 text-gray-900 dark:text-white">$199<span class="text-lg text-gray-600 dark:text-gray-400">/month</span></div>
+                <div class="dark:bg-gray-900 bg-white rounded-2xl p-8 card-hover dark:border-gray-700 border border-gray-200">
+                    <h3 class="text-2xl font-bold mb-2 dark:text-white text-gray-900">Enterprise</h3>
+                    <div class="text-4xl font-bold mb-4 dark:text-white text-gray-900">$199<span class="text-lg dark:text-gray-400 text-gray-600">/month</span></div>
                     <ul class="space-y-3 mb-8">
-                        <li class="flex items-center text-gray-600 dark:text-gray-400">
+                        <li class="flex items-center dark:text-gray-400 text-gray-600">
                             <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                             </svg>
                             Everything in Pro
                         </li>
-                        <li class="flex items-center text-gray-600 dark:text-gray-400">
+                        <li class="flex items-center dark:text-gray-400 text-gray-600">
                             <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                             </svg>
                             Dedicated Support
                         </li>
-                        <li class="flex items-center text-gray-600 dark:text-gray-400">
+                        <li class="flex items-center dark:text-gray-400 text-gray-600">
                             <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                             </svg>
                             Custom Integrations
                         </li>
-                        <li class="flex items-center text-gray-600 dark:text-gray-400">
+                        <li class="flex items-center dark:text-gray-400 text-gray-600">
                             <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                             </svg>
                             SLA Guarantee
                         </li>
                     </ul>
-                    <button class="w-full py-3 border-2 border-purple-600 text-purple-600 dark:text-purple-400 rounded-lg font-semibold hover:bg-purple-50 dark:hover:bg-gray-800 transition">
+                    <button class="w-full py-3 border-2 border-purple-600 dark:text-purple-400 text-purple-600 rounded-lg font-semibold dark:hover:bg-gray-800 hover:bg-purple-50 transition">
                         Contact Sales
                     </button>
                 </div>
@@ -232,58 +237,58 @@
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq" class="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
+    <section id="faq" class="py-20 dark:bg-gray-900 bg-white transition-colors duration-300">
         <div class="max-w-4xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">Frequently Asked Questions</h2>
-                <p class="text-xl text-gray-600 dark:text-gray-400">Everything you need to know about bulidEX</p>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 dark:text-white text-gray-900">Frequently Asked Questions</h2>
+                <p class="text-xl dark:text-gray-400 text-gray-600">Everything you need to know about bulidEX</p>
             </div>
             
             <div class="space-y-4">
-                <div class="bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden">
-                    <button onclick="toggleFaq(1)" class="w-full p-6 text-left flex justify-between items-center hover:bg-gray-100 dark:hover:bg-gray-700 transition">
-                        <span class="font-semibold text-gray-900 dark:text-white">What is bulidEX?</span>
+                <div class="dark:bg-gray-800 bg-gray-50 rounded-lg overflow-hidden">
+                    <button onclick="toggleFaq(1)" class="w-full p-6 text-left flex justify-between items-center dark:hover:bg-gray-700 hover:bg-gray-100 transition">
+                        <span class="font-semibold dark:text-white text-gray-900">What is bulidEX?</span>
                         <svg class="w-5 h-5 transform transition-transform" id="icon-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </button>
-                    <div id="faq-1" class="hidden px-6 pb-6 text-gray-600 dark:text-gray-400">
+                    <div id="faq-1" class="hidden px-6 pb-6 dark:text-gray-400 text-gray-600">
                         bulidEX is a modern SaaS platform designed to accelerate your development workflow. We provide tools and infrastructure to help you build, deploy, and scale your applications faster than ever before.
                     </div>
                 </div>
                 
-                <div class="bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden">
-                    <button onclick="toggleFaq(2)" class="w-full p-6 text-left flex justify-between items-center hover:bg-gray-100 dark:hover:bg-gray-700 transition">
-                        <span class="font-semibold text-gray-900 dark:text-white">How does the free trial work?</span>
+                <div class="dark:bg-gray-800 bg-gray-50 rounded-lg overflow-hidden">
+                    <button onclick="toggleFaq(2)" class="w-full p-6 text-left flex justify-between items-center dark:hover:bg-gray-700 hover:bg-gray-100 transition">
+                        <span class="font-semibold dark:text-white text-gray-900">How does the free trial work?</span>
                         <svg class="w-5 h-5 transform transition-transform" id="icon-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </button>
-                    <div id="faq-2" class="hidden px-6 pb-6 text-gray-600 dark:text-gray-400">
+                    <div id="faq-2" class="hidden px-6 pb-6 dark:text-gray-400 text-gray-600">
                         Our free Starter plan is available forever with no credit card required. You get access to core features and can upgrade anytime as your needs grow.
                     </div>
                 </div>
                 
-                <div class="bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden">
-                    <button onclick="toggleFaq(3)" class="w-full p-6 text-left flex justify-between items-center hover:bg-gray-100 dark:hover:bg-gray-700 transition">
-                        <span class="font-semibold text-gray-900 dark:text-white">Can I change plans later?</span>
+                <div class="dark:bg-gray-800 bg-gray-50 rounded-lg overflow-hidden">
+                    <button onclick="toggleFaq(3)" class="w-full p-6 text-left flex justify-between items-center dark:hover:bg-gray-700 hover:bg-gray-100 transition">
+                        <span class="font-semibold dark:text-white text-gray-900">Can I change plans later?</span>
                         <svg class="w-5 h-5 transform transition-transform" id="icon-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </button>
-                    <div id="faq-3" class="hidden px-6 pb-6 text-gray-600 dark:text-gray-400">
+                    <div id="faq-3" class="hidden px-6 pb-6 dark:text-gray-400 text-gray-600">
                         Absolutely! You can upgrade or downgrade your plan at any time. Changes take effect immediately and we'll prorate the charges accordingly.
                     </div>
                 </div>
                 
-                <div class="bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden">
-                    <button onclick="toggleFaq(4)" class="w-full p-6 text-left flex justify-between items-center hover:bg-gray-100 dark:hover:bg-gray-700 transition">
-                        <span class="font-semibold text-gray-900 dark:text-white">What kind of support do you offer?</span>
+                <div class="dark:bg-gray-800 bg-gray-50 rounded-lg overflow-hidden">
+                    <button onclick="toggleFaq(4)" class="w-full p-6 text-left flex justify-between items-center dark:hover:bg-gray-700 hover:bg-gray-100 transition">
+                        <span class="font-semibold dark:text-white text-gray-900">What kind of support do you offer?</span>
                         <svg class="w-5 h-5 transform transition-transform" id="icon-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </button>
-                    <div id="faq-4" class="hidden px-6 pb-6 text-gray-600 dark:text-gray-400">
+                    <div id="faq-4" class="hidden px-6 pb-6 dark:text-gray-400 text-gray-600">
                         We offer community support for free users, priority email support for Pro users, and dedicated support with SLA guarantees for Enterprise customers.
                     </div>
                 </div>
@@ -299,27 +304,27 @@
                 <p class="text-xl text-purple-100">Have questions? We'd love to hear from you.</p>
             </div>
             
-            <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-2xl">
+            <div class="dark:bg-gray-900 bg-white rounded-2xl p-8 shadow-2xl">
                 <form class="space-y-6">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-sm font-semibold mb-2 text-gray-900 dark:text-white">Name</label>
-                            <input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition" placeholder="John Doe">
+                            <label class="block text-sm font-semibold mb-2 dark:text-white text-gray-900">Name</label>
+                            <input type="text" class="w-full px-4 py-3 rounded-lg dark:border-gray-700 border border-gray-300 dark:bg-gray-800 bg-white dark:text-white text-gray-900 focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition" placeholder="John Doe">
                         </div>
                         <div>
-                            <label class="block text-sm font-semibold mb-2 text-gray-900 dark:text-white">Email</label>
-                            <input type="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition" placeholder="john@example.com">
+                            <label class="block text-sm font-semibold mb-2 dark:text-white text-gray-900">Email</label>
+                            <input type="email" class="w-full px-4 py-3 rounded-lg dark:border-gray-700 border border-gray-300 dark:bg-gray-800 bg-white dark:text-white text-gray-900 focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition" placeholder="john@example.com">
                         </div>
                     </div>
                     
                     <div>
-                        <label class="block text-sm font-semibold mb-2 text-gray-900 dark:text-white">Subject</label>
-                        <input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition" placeholder="How can we help?">
+                        <label class="block text-sm font-semibold mb-2 dark:text-white text-gray-900">Subject</label>
+                        <input type="text" class="w-full px-4 py-3 rounded-lg dark:border-gray-700 border border-gray-300 dark:bg-gray-800 bg-white dark:text-white text-gray-900 focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition" placeholder="How can we help?">
                     </div>
                     
                     <div>
-                        <label class="block text-sm font-semibold mb-2 text-gray-900 dark:text-white">Message</label>
-                        <textarea rows="5" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition" placeholder="Tell us more about your inquiry..."></textarea>
+                        <label class="block text-sm font-semibold mb-2 dark:text-white text-gray-900">Message</label>
+                        <textarea rows="5" class="w-full px-4 py-3 rounded-lg dark:border-gray-700 border border-gray-300 dark:bg-gray-800 bg-white dark:text-white text-gray-900 focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition" placeholder="Tell us more about your inquiry..."></textarea>
                     </div>
                     
                     <button type="submit" class="w-full py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-lg font-semibold hover:shadow-xl transform hover:scale-105 transition duration-300">
@@ -370,6 +375,68 @@
     </footer>
 
     <script>
+        // Theme Toggle
         function toggleTheme() {
             const body = document.body;
-            const icon = document.getElementByI
+            const icon = document.getElementById('theme-icon');
+            
+            if (body.classList.contains('light')) {
+                body.classList.remove('light');
+                body.classList.add('dark');
+                icon.textContent = '☀️';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.classList.remove('dark');
+                body.classList.add('light');
+                icon.textContent = '🌙';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+        
+        // Load saved theme
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            const icon = document.getElementById('theme-icon');
+            
+            if (savedTheme === 'dark') {
+                document.body.classList.remove('light');
+                document.body.classList.add('dark');
+                icon.textContent = '☀️';
+            }
+        });
+        
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+        
+        // FAQ Toggle
+        function toggleFaq(id) {
+            const faq = document.getElementById(`faq-${id}`);
+            const icon = document.getElementById(`icon-${id}`);
+            
+            faq.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+        
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Close mobile menu if open
+                    const menu = document.getElementById('mobile-menu');
+                    if (!menu.classList.contains('hidden')) {
+                        menu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>

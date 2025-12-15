@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <title>buildEX – Modern SaaS Platform</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Dark mode config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+</head>
+
+<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100">
+
+<!-- ================= HEADER ================= -->
+<header class="fixed w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+
+        <h1 class="text-2xl font-bold text-blue-600">buildEX</h1>
+
+        <nav class="hidden md:flex gap-8">
+            <a href="#home" class="hover:text-blue-500">Home</a>
+            <a href="#pricing" class="hover:text-blue-500">Price</a>
+            <a href="#faq" class="hover:text-blue-500">FAQ</a>
+            <a href="#contact" class="hover:text-blue-500">Contact</a>
+        </nav>
+
+        <!-- Dark Mode Button -->
+        <button onclick="toggleDark()" class="border px-3 py-1 rounded">
+            🌙 / ☀️
+        </button>
+
+    </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section id="home" class="pt-32 pb-24 text-center">
+    <div class="max-w-4xl mx-auto px-6">
+
+        <h2 class="text-5xl font-extrabold mb-6">
+            Build Faster with <span class="text-blue-600">buildEX</span>
+        </h2>
+
+        <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
+            A modern SaaS platform to accelerate your product development.
+            Simple, scalable, and developer-friendly.
+        </p>
+
+        <div class="flex justify-center gap-4">
+            <a href="#pricing" class="bg-blue-600 text-white px-6 py-3 rounded-lg">
+                Get Started
+            </a>
+            <a href="#faq" class="border px-6 py-3 rounded-lg">
+                Learn More
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= PRICING ================= -->
+<section id="pricing" class="py-24 bg-gray-50 dark:bg-gray-800">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+
+        <h3 class="text-4xl font-bold mb-12">Pricing</h3>
+
+        <div class="grid md:grid-cols-3 gap-8">
+
+            <!-- Card -->
+            <div class="bg-white dark:bg-gray-900 p-8 rounded-xl shadow">
+                <h4 class="text-xl font-bold mb-4">Starter</h4>
+                <p class="text-3xl font-bold mb-4">$0</p>
+                <ul class="space-y-2 mb-6">
+                    <li>✔ Basic Features</li>
+                    <li>✔ Community Support</li>
+                </ul>
+                <button class="w-full bg-blue-600 text-white py-2 rounded">
+                    Choose Plan
+                </button>
+            </div>
+
+            <div class="bg-white dark:bg-gray-900 p-8 rounded-xl shadow border-2 border-blue-600">
+                <h4 class="text-xl font-bold mb-4">Pro</h4>
+                <p class="text-3xl font-bold mb-4">$29</p>
+                <ul class="space-y-2 mb-6">
+                    <li>✔ All Starter Features</li>
+                    <li>✔ Advanced Tools</li>
+                    <li>✔ Priority Support</li>
+                </ul>
+                <button class="w-full bg-blue-600 text-white py-2 rounded">
+                    Choose Plan
+                </button>
+            </div>
+
+            <div class="bg-white dark:bg-gray-900 p-8 rounded-xl shadow">
+                <h4 class="text-xl font-bold mb-4">Enterprise</h4>
+                <p class="text-3xl font-bold mb-4">Custom</p>
+                <ul class="space-y-2 mb-6">
+                    <li>✔ Full Access</li>
+                    <li>✔ Dedicated Support</li>
+                </ul>
+                <button class="w-full bg-blue-600 text-white py-2 rounded">
+                    Contact Us
+                </button>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq" class="py-24">
+    <div class="max-w-4xl mx-auto px-6">
+
+        <h3 class="text-4xl font-bold text-center mb-12">FAQ</h3>
+
+        <div class="space-y-6">
+            <details class="bg-gray-100 dark:bg-gray-800 p-4 rounded">
+                <summary class="font-semibold cursor-pointer">
+                    What is buildEX?
+                </summary>
+                <p class="mt-2 text-gray-600 dark:text-gray-300">
+                    buildEX is a SaaS platform for rapid product development.
+                </p>
+            </details>
+
+            <details class="bg-gray-100 dark:bg-gray-800 p-4 rounded">
+                <summary class="font-semibold cursor-pointer">
+                    Is there a free plan?
+                </summary>
+                <p class="mt-2 text-gray-600 dark:text-gray-300">
+                    Yes! Starter plan is completely free.
+                </p>
+            </details>
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="py-24 bg-gray-50 dark:bg-gray-800">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+
+        <h3 class="text-4xl font-bold mb-8">Contact Us</h3>
+
+        <form class="grid gap-4 max-w-xl mx-auto">
+            <input type="text" placeholder="Your Name"
+                class="p-3 rounded bg-white dark:bg-gray-900">
+            <input type="email" placeholder="Email"
+                class="p-3 rounded bg-white dark:bg-gray-900">
+            <textarea rows="4" placeholder="Message"
+                class="p-3 rounded bg-white dark:bg-gray-900"></textarea>
+
+            <button class="bg-blue-600 text-white py-3 rounded">
+                Send Message
+            </button>
+        </form>
+
+    </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="py-6 text-center text-sm">
+    © 2025 buildEX. All rights reserved.
+</footer>
+
+<!-- ================= JS ================= -->
+<script>
+    function toggleDark() {
+        document.documentElement.classList.toggle('dark');
+    }
+</script>
+
+</body>
+</html>
